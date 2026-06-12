@@ -1,0 +1,236 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Shubham Gadre",
+      "email": "shubhamgadre123@gmail.com",
+      "username": "SHUBHAM",
+      "phone": "+91 9876543210",
+      "dob": "1995-01-15",
+      "password": "SHUBHAM",
+      "currency": "INR",
+      "language": "en",
+      "theme": "light",
+      "profilePicture": "",
+      "isDemo": true,
+      "createdAt": "2024-01-15T10:30:00.000Z",
+      "updatedAt": "2024-01-15T10:30:00.000Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1705316400000,
+      "userId": 1,
+      "type": "income",
+      "amount": 110000,
+      "category": "Salary",
+      "description": "Monthly salary",
+      "date": "2024-01-15",
+      "createdAt": "2024-01-15T10:30:00.000Z"
+    },
+    {
+      "id": 1705402800000,
+      "userId": 1,
+      "type": "expense",
+      "amount": 5000,
+      "category": "Food",
+      "description": "Grocery shopping",
+      "date": "2024-01-16",
+      "createdAt": "2024-01-16T09:15:00.000Z"
+    }
+  ],
+  "budgets": [
+    {
+      "id": 1705316400001,
+      "userId": 1,
+      "category": "Food",
+      "limit": 8000,
+      "spent": 5000,
+      "month": "January",
+      "year": 2024,
+      "createdAt": "2024-01-15T10:30:00.000Z"
+    },
+    {
+      "id": 1705316400002,
+      "userId": 1,
+      "category": "Entertainment",
+      "limit": 3000,
+      "spent": 1500,
+      "month": "January",
+      "year": 2024,
+      "createdAt": "2024-01-15T10:30:00.000Z"
+    }
+  ],
+  "goals": [
+    {
+      "id": 1705316400003,
+      "userId": 1,
+      "title": "Emergency Fund",
+      "targetAmount": 100000,
+      "currentAmount": 45000,
+      "deadline": "2025-12-31",
+      "priority": "high",
+      "description": "Build emergency fund for 6 months",
+      "createdAt": "2024-01-15T10:30:00.000Z"
+    },
+    {
+      "id": 1705316400004,
+      "userId": 1,
+      "title": "Vacation Fund",
+      "targetAmount": 50000,
+      "currentAmount": 12000,
+      "deadline": "2024-06-30",
+      "priority": "medium",
+      "description": "Save for summer vacation",
+      "createdAt": "2024-01-15T10:30:00.000Z"
+    }
+  ],
+  "bankAccounts": [
+    {
+      "id": 1705316400005,
+      "userId": 1,
+      "accountType": "Savings",
+      "bankName": "HDFC Bank",
+      "accountNumber": "****1234",
+      "ifscCode": "HDFC0000001",
+      "accountHolderName": "Shubham Gadre",
+      "balance": 250000,
+      "createdAt": "2024-01-15T10:30:00.000Z"
+    },
+    {
+      "id": 1705316400006,
+      "userId": 1,
+      "accountType": "Current",
+      "bankName": "ICICI Bank",
+      "accountNumber": "****5678",
+      "ifscCode": "ICIC0000001",
+      "accountHolderName": "Shubham Gadre",
+      "balance": 500000,
+      "createdAt": "2024-01-15T10:30:00.000Z"
+    }
+  ],
+  "upiDetails": [
+    {
+      "id": 1705316400007,
+      "userId": 1,
+      "upiId": "shubham@okhdfcbank",
+      "bankName": "HDFC Bank",
+      "mobileNumber": "+91 9876543210",
+      "isDefault": true,
+      "createdAt": "2024-01-15T10:30:00.000Z"
+    },
+    {
+      "id": 1705316400008,
+      "userId": 1,
+      "upiId": "shubham@icici",
+      "bankName": "ICICI Bank",
+      "mobileNumber": "+91 9876543210",
+      "isDefault": false,
+      "createdAt": "2024-01-15T10:30:00.000Z"
+    }
+  ],
+  "otpVerification": {
+    "shubhamgadre123@gmail.com": {
+      "otp": "123456",
+      "userId": 1,
+      "expiresAt": 1705320600000,
+      "attempts": 0
+    }
+  },
+  "schema": {
+    "users": {
+      "description": "User accounts and profiles",
+      "fields": {
+        "id": "number - Unique user ID (timestamp-based)",
+        "name": "string - Full name",
+        "email": "string - Email address (unique)",
+        "username": "string - Username (unique)",
+        "phone": "string - Phone number (unique)",
+        "dob": "string - Date of birth (YYYY-MM-DD)",
+        "password": "string - User password (hashed in production)",
+        "currency": "string - Preferred currency (default: INR)",
+        "language": "string - Preferred language (default: en)",
+        "theme": "string - UI theme preference (light/dark)",
+        "profilePicture": "string - Base64 or URL of profile picture",
+        "isDemo": "boolean - Whether this is a demo account",
+        "createdAt": "string - ISO timestamp of creation",
+        "updatedAt": "string - ISO timestamp of last update"
+      }
+    },
+    "transactions": {
+      "description": "Financial transactions (income/expense)",
+      "fields": {
+        "id": "number - Unique transaction ID",
+        "userId": "number - Associated user ID",
+        "type": "string - Type (income or expense)",
+        "amount": "number - Transaction amount",
+        "category": "string - Category (Salary, Food, etc)",
+        "description": "string - Transaction description",
+        "date": "string - Transaction date (YYYY-MM-DD)",
+        "createdAt": "string - ISO timestamp of creation"
+      }
+    },
+    "budgets": {
+      "description": "Monthly/yearly budget limits by category",
+      "fields": {
+        "id": "number - Unique budget ID",
+        "userId": "number - Associated user ID",
+        "category": "string - Budget category",
+        "limit": "number - Budget limit amount",
+        "spent": "number - Amount spent so far",
+        "month": "string - Month name",
+        "year": "number - Year",
+        "createdAt": "string - ISO timestamp of creation"
+      }
+    },
+    "goals": {
+      "description": "Financial goals and targets",
+      "fields": {
+        "id": "number - Unique goal ID",
+        "userId": "number - Associated user ID",
+        "title": "string - Goal title",
+        "targetAmount": "number - Target amount to save",
+        "currentAmount": "number - Current saved amount",
+        "deadline": "string - Target deadline (YYYY-MM-DD)",
+        "priority": "string - Priority level (high/medium/low)",
+        "description": "string - Goal description",
+        "createdAt": "string - ISO timestamp of creation"
+      }
+    },
+    "bankAccounts": {
+      "description": "Linked bank accounts",
+      "fields": {
+        "id": "number - Unique account ID",
+        "userId": "number - Associated user ID",
+        "accountType": "string - Type (Savings/Current/etc)",
+        "bankName": "string - Bank name",
+        "accountNumber": "string - Masked account number",
+        "ifscCode": "string - IFSC code",
+        "accountHolderName": "string - Account holder name",
+        "balance": "number - Current account balance",
+        "createdAt": "string - ISO timestamp of creation"
+      }
+    },
+    "upiDetails": {
+      "description": "Linked UPI IDs",
+      "fields": {
+        "id": "number - Unique UPI detail ID",
+        "userId": "number - Associated user ID",
+        "upiId": "string - UPI ID (e.g., user@bank)",
+        "bankName": "string - Associated bank name",
+        "mobileNumber": "string - Mobile number linked to UPI",
+        "isDefault": "boolean - Whether this is default UPI",
+        "createdAt": "string - ISO timestamp of creation"
+      }
+    },
+    "otpVerification": {
+      "description": "OTP data for password reset verification",
+      "fields": {
+        "otp": "string - 6-digit OTP code",
+        "userId": "number - Associated user ID",
+        "expiresAt": "number - Expiry timestamp (5 minutes)",
+        "attempts": "number - Failed attempts count (max 3)"
+      }
+    }
+  }
+}
